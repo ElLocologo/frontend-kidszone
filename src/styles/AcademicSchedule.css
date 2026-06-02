@@ -1,0 +1,141 @@
+.academic-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.academic-admin h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.academic-admin section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecef;
+}
+
+.academic-admin .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.academic-admin label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.35rem;
+}
+
+.academic-admin input,
+.academic-admin select {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #ccd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.academic-admin .btn-primary {
+  padding: 0.55rem 1rem;
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.academic-admin .btn-primary:hover {
+  background: #0770c4;
+}
+
+.academic-admin .btn-danger {
+  padding: 0.35rem 0.65rem;
+  background: #fff;
+  color: #d63031;
+  border: 1px solid #fab1a0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.academic-admin .btn-danger:hover {
+  background: #ffeaa7;
+}
+
+.academic-admin table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.academic-admin th,
+.academic-admin td {
+  text-align: left;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid #eee;
+}
+
+.academic-admin th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+.academic-timetable {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e8ecef;
+  margin-top: 0.5rem;
+}
+
+.academic-timetable h3 {
+  margin: 0 0 1rem;
+}
+
+.academic-timetable .empty-msg {
+  color: #636e72;
+  text-align: center;
+  padding: 2rem;
+}
+
+.academic-timetable .day-block {
+  margin-bottom: 1.25rem;
+}
+
+.academic-timetable .day-title {
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #74b9ff;
+}
+
+.academic-timetable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.academic-timetable th,
+.academic-timetable td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.academic-timetable th {
+  color: #636e72;
+  font-weight: 600;
+}
+
+.academic-timetable .hint {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin-bottom: 1rem;
+}

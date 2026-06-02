@@ -1,0 +1,339 @@
+.schedule-manager {
+  margin-bottom: 40px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.schedule-header h3 {
+  color: #1B5E20;
+  font-size: 20px;
+  margin: 0;
+}
+
+.btn-add-schedule {
+  background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-add-schedule:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+}
+
+.schedule-form {
+  background: linear-gradient(135deg, #F1F8E9 0%, #FFFFFF 100%);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #2E7D32;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.schedule-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-form label {
+  font-weight: 700;
+  color: #1B5E20;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.schedule-form input,
+.schedule-form select,
+.schedule-form textarea {
+  padding: 12px;
+  border: 2px solid #C8E6C9;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.schedule-form input:focus,
+.schedule-form select:focus,
+.schedule-form textarea:focus {
+  border-color: #2E7D32;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15);
+  outline: none;
+}
+
+.schedule-form .btn-submit {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.schedule-form .btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+}
+
+/* CALENDARIO */
+.calendar {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.calendar-nav button {
+  background-color: #F5F5F5;
+  border: 2px solid #E0E0E0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2E7D32;
+  transition: all 0.3s ease;
+}
+
+.calendar-nav button:hover {
+  background-color: #E8F5E9;
+  border-color: #4CAF50;
+}
+
+.calendar-nav h4 {
+  color: #1B5E20;
+  font-size: 18px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.weekdays > div {
+  font-weight: 700;
+  color: #2E7D32;
+  padding: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 100px;
+  background-color: #FAFAFA;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-day:hover {
+  background-color: #F1F8E9;
+  border-color: #4CAF50;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  border: none;
+}
+
+.day-number {
+  font-weight: 700;
+  color: #1B5E20;
+  margin-bottom: 8px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.event-badge {
+  background: linear-gradient(135deg, #C8E6C9 0%, #E8F5E9 100%);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #1B5E20;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  border-left: 3px solid #2E7D32;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: wrap;
+}
+
+.event-badge:hover {
+  background: linear-gradient(135deg, #A5D6A7 0%, #C8E6C9 100%);
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+  border-left-width: 4px;
+}
+
+.event-badge span {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.event-more-indicator {
+  background: linear-gradient(135deg, #FFCCBC 0%, #FFE0B2 100%) !important;
+  border-left-color: #FF6F00 !important;
+  color: #E65100 !important;
+}
+
+.event-more-indicator:hover {
+  background: linear-gradient(135deg, #FFAB91 0%, #FFCC80 100%) !important;
+}
+
+/* LISTA DE EVENTOS */
+.schedule-list {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-list h4 {
+  color: #1B5E20;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+.schedule-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-left: 4px solid #2E7D32;
+  background-color: #F1F8E9;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.schedule-list li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+}
+
+.event-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info strong {
+  display: block;
+  color: #1B5E20;
+  margin-bottom: 4px;
+}
+
+.event-info p {
+  color: #666;
+  font-size: 12px;
+  margin: 0;
+}
+
+.schedule-scope-hint {
+  font-size: 14px;
+  color: #455a64;
+  margin: 0 0 16px 0;
+  line-height: 1.45;
+}
+
+.event-scope-tag {
+  display: block;
+  font-size: 9px;
+  color: #37474f;
+  margin-top: 2px;
+}
+
+.event-scope-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.event-meta-line {
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .weekdays,
+  .calendar-grid {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+
+  .schedule-form {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-day {
+    min-height: 80px;
+    padding: 8px;
+  }
+
+  .day-number {
+    font-size: 12px;
+  }
+}

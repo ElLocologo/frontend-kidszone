@@ -1,0 +1,313 @@
+/* Data Grid with Filters - Estilos para tarjetas y filtros */
+
+.data-grid-container {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Header y filtros */
+.grid-header {
+  margin-bottom: 25px;
+}
+
+.grid-header h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #2d3436;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4b6cb7;
+  background: white;
+  box-shadow: 0 0 8px rgba(75, 108, 183, 0.1);
+}
+
+.filter-results {
+  padding: 8px 12px;
+  background: #e3f2fd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #1565c0;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Grid de tarjetas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  min-height: 200px;
+}
+
+/* Estilos individuales de tarjetas */
+.data-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.data-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(75, 108, 183, 0.15);
+  border-color: #4b6cb7;
+}
+
+.data-card:hover::before {
+  opacity: 1;
+}
+
+/* Header de la tarjeta */
+.card-header {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-title h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3436;
+  font-weight: 600;
+  flex: 1;
+}
+
+.badge-cedula {
+  background: #ffe0b2;
+  color: #e65100;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  flex: 1;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  color: #7a8fa0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-value {
+  font-size: 0.95rem;
+  color: #2d3436;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* Footer con acciones */
+.card-footer {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Botón por defecto */
+.action-btn {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.action-btn:hover {
+  background: #bbdefb;
+  transform: scale(1.05);
+}
+
+/* Botones específicos */
+.action-view {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.action-view:hover {
+  background: #c8e6c9;
+}
+
+.action-edit {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.action-edit:hover {
+  background: #ffe0b2;
+}
+
+.action-delete {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.action-delete:hover {
+  background: #ffcdd2;
+}
+
+/* Badge de estado */
+.status-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #e0f2f1;
+  color: #00695c;
+}
+
+.status-badge.active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.inactive {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Estado vacío */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #7a8fa0;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.empty-state .hint {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .search-input {
+    min-width: 100%;
+  }
+
+  .filter-results {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-grid-container {
+    padding: 15px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-btn {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+
+  .card-title h4 {
+    font-size: 1rem;
+  }
+}
